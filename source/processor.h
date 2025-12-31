@@ -35,6 +35,7 @@ private:
 
   DSP::Smoother inGainSm_, outGainSm_, driveSm_;
   DSP::EnvelopeFollower envL_, envR_;
+  DSP::AttackReleaseEnvelope sagEnv_;
   float lastEnv_ = 0.0f;
 
   DSP::Biquad bassL_, bassR_;
@@ -46,10 +47,14 @@ private:
 
   DSP::Biquad cabHpL_, cabHpR_;
   DSP::Biquad cabLpL_, cabLpR_;
+  DSP::Biquad cabResL_, cabResR_;
+  DSP::Biquad cabMidL_, cabMidR_;
 
   DSP::Biquad ultraLowL_, ultraLowR_;
   DSP::Biquad ultraLowCutL_, ultraLowCutR_;
   DSP::Biquad ultraHighL_, ultraHighR_;
+
+  DSP::Oversampler4x osL_, osR_;
 
 };
 

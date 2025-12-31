@@ -664,3 +664,6 @@
 435	2807	7888659224268025	CMakeFiles/SvenderBass.dir/source/factory.cpp.obj	cb2815a6a7d21159
 446	3041	7888659224489227	CMakeFiles/SvenderBass.dir/source/processor.cpp.obj	76e3cc05c49672ee
 3048	4587	7888659250520073	VST3/Release/SvenderBass.vst3/Contents/x86_64-win/SvenderBass.vst3	cb5d31dd4a8e7241
+992	3947	7889264170436552	CMakeFiles/SvenderBass.dir/source/factory.cpp.obj	cb2815a6a7d21159
+1021	4092	7889264170610198	CMakeFiles/SvenderBass.dir/source/processor.cpp.obj	76e3cc05c49672ee
+4094	6733	7889264201384542	VST3/Release/SvenderBass.vst3/Contents/x86_64-win/SvenderBass.vst3	cb5d31dd4a8e7241

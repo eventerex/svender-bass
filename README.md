@@ -38,3 +38,4 @@ The actual plugin binary is:
   enable Developer Mode in Windows 10:
   Settings → Update & Security → For developers → Developer mode.
 - If you see MSVC warning D9025 about /Zi vs /ZI, CMakeLists.txt normalizes it.
+

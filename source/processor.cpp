@@ -36,6 +36,11 @@ tresult PLUGIN_API Processor::setupProcessing(ProcessSetup& setup) {
   envL_.reset();
   envR_.reset();
   lastEnv_ = 0.0f;
+  sagEnv_.setTimesMs((float)sampleRate_, 15.0f, 220.0f);
+  sagEnv_.reset();
+
+  osL_.setSampleRate((float)sampleRate_);
+  osR_.setSampleRate((float)sampleRate_);
 
   updateFilters();
   return AudioEffect::setupProcessing(setup);
@@ -50,11 +55,16 @@ tresult PLUGIN_API Processor::setActive(TBool state) {
     postHighL_.reset(); postHighR_.reset();
     cabHpL_.reset(); cabHpR_.reset();
     cabLpL_.reset(); cabLpR_.reset();
+    cabResL_.reset(); cabResR_.reset();
+    cabMidL_.reset(); cabMidR_.reset();
     ultraLowL_.reset(); ultraLowR_.reset();
     ultraLowCutL_.reset(); ultraLowCutR_.reset();
     ultraHighL_.reset(); ultraHighR_.reset();
     envL_.reset(); envR_.reset();
     lastEnv_ = 0.0f;
+    sagEnv_.reset();
+    osL_.reset();
+    osR_.reset();
   }
   return AudioEffect::setActive(state);
 }
@@ -96,6 +106,11 @@ void Processor::updateFilters() {
   cabHpR_.setHP(sr, 55.0f, 0.707f);
   cabLpL_.setLP(sr, 5200.0f, 0.707f);
   cabLpR_.setLP(sr, 5200.0f, 0.707f);
+
+  cabResL_.setPeaking(sr, 90.0f, 3.0f, 0.9f);
+  cabResR_.setPeaking(sr, 90.0f, 3.0f, 0.9f);
+  cabMidL_.setPeaking(sr, 750.0f, -2.5f, 1.1f);
+  cabMidR_.setPeaking(sr, 750.0f, -2.5f, 1.1f);
 
   const float ulDb = pUltraLow_  ? +2.0f : 0.0f;
   const float ulCutDb = pUltraLow_ ? -10.0f : 0.0f;
@@ -181,6 +196,14 @@ tresult PLUGIN_API Processor::process(ProcessData& data) {
 
   float envSum = 0.0f;
 
+  auto satProcess = [](float x, DSP::Oversampler4x& os, float drive) {
+    float up[4] = {};
+    os.upsample(x, up);
+    for (int i = 0; i < 4; ++i)
+      up[i] = DSP::tubeSatMulti(up[i], drive);
+    return os.downsample(up);
+  };
+
   for (int32 n = 0; n < data.numSamples; ++n) {
     float inG  = inGainSm_.process(inLinTarget);
     float outG = outGainSm_.process(outLinTarget);
@@ -209,8 +232,16 @@ tresult PLUGIN_API Processor::process(ProcessData& data) {
     float eR = envR_.process(xR);
     envSum += 0.5f * (eL + eR);
 
-    xL = DSP::tubeSat(xL, drv);
-    xR = DSP::tubeSat(xR, drv);
+    float sagIn = 0.5f * (std::fabs(xL) + std::fabs(xR));
+    float sag = sagEnv_.process(sagIn);
+    float sagCtrl = DSP::clamp(sag * 2.5f, 0.0f, 1.0f);
+    float sagDrive = 1.0f - 0.35f * sagCtrl;
+    float sagGain = 1.0f - 0.20f * sagCtrl;
+
+    xL = satProcess(xL, osL_, drv * sagDrive);
+    xR = satProcess(xR, osR_, drv * sagDrive);
+    xL *= sagGain;
+    xR *= sagGain;
 
     xL = postLowL_.process(xL);
     xL = postHighL_.process(xL);
@@ -218,8 +249,12 @@ tresult PLUGIN_API Processor::process(ProcessData& data) {
     xR = postHighR_.process(xR);
 
     xL = cabHpL_.process(xL);
+    xL = cabResL_.process(xL);
+    xL = cabMidL_.process(xL);
     xL = cabLpL_.process(xL);
     xR = cabHpR_.process(xR);
+    xR = cabResR_.process(xR);
+    xR = cabMidR_.process(xR);
     xR = cabLpR_.process(xR);
 
     out[0][n] = xL * outG;
