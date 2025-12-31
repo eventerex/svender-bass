@@ -1,0 +1,52 @@
+{
+  "Name": "panner",
+  "Version": "3.8.0.0",
+  "Factory Info": {
+    "Vendor": "Steinberg Media Technologies",
+    "URL": "http://www.steinberg.net",
+    "E-Mail": "mailto:info@steinberg.de",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "A2EAF7DB320640F48EDE380DDF89562C",
+      "Category": "Audio Module Class",
+      "Name": "Panner",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Spatial",
+        "Fx",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+        {
+          "Scale Factor": 1,
+          "Path": "Contents/Resources/Snapshots/A2EAF7DB320640F48EDE380DDF89562C_snapshot.png",
+        },
+        {
+          "Scale Factor": 2,
+          "Path": "Contents/Resources/Snapshots/A2EAF7DB320640F48EDE380DDF89562C_snapshot_2.0x.png",
+        },
+      ],
+    },
+    {
+      "CID": "239F80C24F1442C48B58AE6E7C8644EB",
+      "Category": "Component Controller Class",
+      "Name": "PannerController",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

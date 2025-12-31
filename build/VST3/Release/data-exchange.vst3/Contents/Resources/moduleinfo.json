@@ -1,0 +1,43 @@
+{
+  "Name": "data-exchange",
+  "Version": "3.8.0.0",
+  "Factory Info": {
+    "Vendor": "Steinberg Media Technologies",
+    "URL": "http://www.steinberg.net",
+    "E-Mail": "mailto:info@steinberg.de",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "2AF3DF1C93D243B3BA13E61CDCFDAC5D",
+      "Category": "Audio Module Class",
+      "Name": "DataExchange",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "B49E781BED8F486F85D4306E2C6207A0",
+      "Category": "Component Controller Class",
+      "Name": "DataExchangeController",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

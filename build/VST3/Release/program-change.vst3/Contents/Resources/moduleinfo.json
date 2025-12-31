@@ -1,0 +1,43 @@
+{
+  "Name": "program-change",
+  "Version": "3.8.0.0",
+  "Factory Info": {
+    "Vendor": "Steinberg Media Technologies",
+    "URL": "http://www.steinberg.net",
+    "E-Mail": "mailto:info@steinberg.de",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "C09CDA28346B43189906B54E8A7023E2",
+      "Category": "Audio Module Class",
+      "Name": "Test Program Change",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "86152E376F094BDF9929F219BA3BBED7",
+      "Category": "Component Controller Class",
+      "Name": "Test Program ChangeController",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

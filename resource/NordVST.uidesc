@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vstgui-ui-description version="1">
+  <bitmaps>
+    <bitmap name="faceplate" path="faceplate.png"/>
+  </bitmaps>
+
+  <templates>
+    <template name="Editor" size="1200,450" background="faceplate">
+    </template>
+  </templates>
+</vstgui-ui-description>

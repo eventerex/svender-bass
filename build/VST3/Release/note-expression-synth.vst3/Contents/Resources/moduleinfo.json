@@ -1,0 +1,80 @@
+{
+  "Name": "note-expression-synth",
+  "Version": "3.8.0.0",
+  "Factory Info": {
+    "Vendor": "Steinberg Media Technologies",
+    "URL": "http://www.steinberg.net",
+    "E-Mail": "mailto:info@steinberg.de",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "41466D9BB0654576B641098F686371B3",
+      "Category": "Audio Module Class",
+      "Name": "Note Expression Synth With UI",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Instrument",
+        "Synth",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+        {
+          "Scale Factor": 1,
+          "Path": "Contents/Resources/Snapshots/41466D9BB0654576B641098F686371B3_snapshot.png",
+        },
+        {
+          "Scale Factor": 2,
+          "Path": "Contents/Resources/Snapshots/41466D9BB0654576B641098F686371B3_snapshot_2.0x.png",
+        },
+      ],
+    },
+    {
+      "CID": "1AA302B3E8384785B9C3FE3E08B056F5",
+      "Category": "Component Controller Class",
+      "Name": "Note Expression Synth With UI",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "6EE65CD1B83A4AF480AA7929AEA6B8A0",
+      "Category": "Audio Module Class",
+      "Name": "Note Expression Synth",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Instrument",
+        "Synth",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "2AC0A8889406497FBBA6EABFC78D1372",
+      "Category": "Component Controller Class",
+      "Name": "Note Expression Synth",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}

@@ -1,0 +1,43 @@
+{
+  "Name": "prefetchable",
+  "Version": "3.8.0.0",
+  "Factory Info": {
+    "Vendor": "Steinberg Media Technologies",
+    "URL": "http://www.steinberg.net",
+    "E-Mail": "mailto:info@steinberg.de",
+    "Flags": {
+      "Unicode": true,
+      "Classes Discardable": false,
+      "Component Non Discardable": false,
+    },
+  },
+  "Classes": [
+    {
+      "CID": "0ABFECE01A93E7468341C6342394798D",
+      "Category": "Audio Module Class",
+      "Name": "Test Prefetchable Support",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Sub Categories": [
+        "Fx",
+      ],
+      "Class Flags": 1,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+    {
+      "CID": "C2472691B1FA6441B272196AD5CE58BB",
+      "Category": "Component Controller Class",
+      "Name": "Test Prefetchable SupportController",
+      "Vendor": "Steinberg Media Technologies",
+      "Version": "3.8.0.0",
+      "SDKVersion": "VST 3.8.0",
+      "Class Flags": 0,
+      "Cardinality": 2147483647,
+      "Snapshots": [
+      ],
+    },
+  ],
+}
